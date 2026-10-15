@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the technical skills, tools, and projects of Chaitanya Bidkar, a Java Developer and MCA Data Science student.">
+  <meta name="theme-color" content="#0b0b12">
+  <title>Skills | Chaitanya Bidkar</title>
+  <style>
+    :root {
+      --bg: #0b0b12;
+      --surface: rgba(22, 22, 36, .82);
+      --surface-2: #171725;
+      --text: #f5f4ff;
+      --muted: #aaa8c2;
+      --purple: #a78bfa;
+      --purple-bright: #8b5cf6;
+      --border: rgba(167, 139, 250, .22);
+      --max-width: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 14% 2%, rgba(124,58,237,.18), transparent 34%),
+        radial-gradient(ellipse at 88% 34%, rgba(91,33,182,.13), transparent 30%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(var(--max-width), calc(100% - 40px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(11,11,18,.8); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 1.12rem; font-weight: 850; letter-spacing: -.04em; }
+    .brand span { color: var(--purple); }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .93rem; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+    .nav-cta { border: 1px solid var(--border); border-radius: 999px; padding: 9px 15px; color: var(--text) !important; background: rgba(139,92,246,.1); }
+    .menu-toggle { display: none; background: transparent; border: 1px solid var(--border); border-radius: 10px; color: var(--text); padding: 8px 11px; font: inherit; cursor: pointer; }
+
+    .hero { padding: 82px 0 45px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 50px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--border); border-radius: 999px; padding: 7px 13px; color: #d4c7ff; background: rgba(139,92,246,.1); font-size: .82rem; font-weight: 700; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 13px var(--purple-bright); }
+    h1 { margin: 20px 0 15px; font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.065em; }
+    .gradient { background: linear-gradient(100deg, #c4b5fd, #a78bfa 55%, #f0abfc); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .hero p { max-width: 670px; color: var(--muted); font-size: 1.05rem; margin: 0; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .btn { min-height: 45px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; padding: 11px 17px; font: inherit; font-weight: 750; border: 1px solid transparent; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; box-shadow: 0 8px 26px rgba(109,40,217,.25); }
+    .btn-secondary { background: rgba(255,255,255,.025); border-color: rgba(255,255,255,.13); }
+    .summary-card { padding: 26px; border: 1px solid var(--border); border-radius: 23px; background: linear-gradient(145deg, rgba(31,26,52,.93), rgba(17,17,28,.88)); box-shadow: 0 20px 70px rgba(0,0,0,.24), 0 0 50px rgba(139,92,246,.12); }
+    .summary-card h2 { margin: 0 0 5px; font-size: 1.2rem; }
+    .summary-card > p { color: var(--muted); font-size: .9rem; margin: 0 0 20px; }
+    .summary-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .stat { padding: 15px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.06); }
+    .stat strong { display: block; color: #d8ccff; font-size: 1.35rem; line-height: 1.2; }
+    .stat span { display: block; color: var(--muted); font-size: .78rem; margin-top: 5px; }
+
+    section { padding: 45px 0; }
+    .section-heading { margin-bottom: 25px; max-width: 720px; }
+    .kicker { color: var(--purple); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 850; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -.05em; line-height: 1.15; margin: 8px 0 10px; }
+    .section-description { margin: 0; color: var(--muted); }
+    .toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; margin: 25px 0 20px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-btn { color: var(--muted); background: rgba(255,255,255,.025); border: 1px solid rgba(255,255,255,.1); border-radius: 999px; padding: 8px 13px; font: inherit; font-size: .86rem; cursor: pointer; transition: .2s ease; }
+    .filter-btn:hover, .filter-btn.active { color: var(--text); border-color: var(--border); background: rgba(139,92,246,.16); }
+    .search-wrap { position: relative; min-width: min(100%, 240px); }
+    .search-wrap input { width: 100%; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.11); color: var(--text); border-radius: 12px; padding: 10px 13px 10px 37px; outline: none; font: inherit; font-size: .9rem; }
+    .search-wrap input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(167,139,250,.12); }
+    .search-icon { position: absolute; left: 13px; top: 9px; color: var(--muted); pointer-events: none; }
+    .category-section { margin-top: 27px; }
+    .category-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 15px; }
+    .category-symbol { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 12px; background: rgba(139,92,246,.12); border: 1px solid var(--border); color: #d6c8ff; font-weight: 850; }
+    .category-heading h3 { margin: 0; font-size: 1.15rem; }
+    .category-heading p { margin: 1px 0 0; color: var(--muted); font-size: .83rem; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .skill-card { min-width: 0; padding: 21px; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; background: var(--surface); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+    .skill-card:hover { transform: translateY(-4px); border-color: var(--border); box-shadow: 0 14px 34px rgba(0,0,0,.2), 0 0 25px rgba(139,92,246,.08); }
+    .skill-top { display: flex; align-items: center; gap: 12px; }
+    .skill-icon { width: 43px; height: 43px; flex: 0 0 43px; display: grid; place-items: center; border-radius: 13px; background: rgba(139,92,246,.13); color: #d5c8ff; font-weight: 850; font-size: .92rem; }
+    .skill-title { min-width: 0; flex: 1; }
+    .skill-title h4 { margin: 0; font-size: 1rem; }
+    .skill-title p { margin: 1px 0 0; color: var(--muted); font-size: .78rem; }
+    .level { display: inline-flex; white-space: nowrap; margin-top: 17px; padding: 4px 9px; border-radius: 999px; font-size: .74rem; font-weight: 750; color: #d4c7ff; border: 1px solid rgba(167,139,250,.2); background: rgba(139,92,246,.1); }
+    .level.intermediate { color: #c4f1df; border-color: rgba(110,231,183,.18); background: rgba(16,185,129,.08); }
+    .level.advanced { color: #fde68a; border-color: rgba(253,230,138,.2); background: rgba(234,179,8,.08); }
+    .skill-desc { color: var(--muted); font-size: .87rem; margin: 12px 0 15px; min-height: 44px; }
+    .progress-label { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: .76rem; margin-bottom: 7px; }
+    .progress-label span:last-child { color: #d4c7ff; font-weight: 700; }
+    .progress-track { height: 6px; border-radius: 99px; overflow: hidden; background: rgba(255,255,255,.08); }
+    .progress-fill { height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, #6d28d9, #a78bfa, #d8b4fe); transition: width 1s cubic-bezier(.2,.7,.2,1); }
+    .empty-state { display: none; padding: 30px; text-align: center; color: var(--muted); border: 1px dashed var(--border); border-radius: 16px; }
+
+    .learning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .learning-card { padding: 23px; border-radius: 18px; background: var(--surface); border: 1px solid rgba(255,255,255,.08); }
+    .learning-card h3 { margin: 0 0 7px; }
+    .learning-card p { color: var(--muted); margin: 0; font-size: .92rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .tag { border: 1px solid rgba(167,139,250,.19); border-radius: 999px; padding: 5px 10px; background: rgba(139,92,246,.09); color: #d6c8ff; font-size: .8rem; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
+    .project-card { padding: 23px; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; background: var(--surface); transition: transform .2s ease, border-color .2s ease; }
+    .project-card:hover { transform: translateY(-3px); border-color: var(--border); }
+    .project-number { color: var(--purple); font-size: .78rem; font-weight: 850; letter-spacing: .12em; }
+    .project-card h3 { margin: 8px 0; font-size: 1.08rem; }
+    .project-card p { color: var(--muted); font-size: .88rem; margin: 0 0 15px; }
+    .project-card .tag-list { margin-top: 0; }
+    .project-note { color: var(--muted); font-size: .82rem; margin-top: 17px; }
+
+    .cta { padding: clamp(25px,5vw,42px); border: 1px solid var(--border); border-radius: 23px; background: radial-gradient(circle at 100% 0%, rgba(139,92,246,.2), transparent 38%), var(--surface); display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+    .cta h2 { font-size: clamp(1.65rem,3vw,2.35rem); line-height: 1.2; letter-spacing: -.045em; margin: 7px 0 9px; }
+    .cta p { color: var(--muted); max-width: 650px; margin: 0; }
+    footer { margin-top: 45px; padding: 25px 0; border-top: 1px solid rgba(255,255,255,.07); color: var(--muted); font-size: .88rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .footer-inner strong { color: var(--text); }
+    .back-top { color: #c4b5fd; }
+    .reveal { opacity: 0; transform: translateY(17px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .summary-card { max-width: 600px; }
+      .skills-grid { grid-template-columns: repeat(2,1fr); }
+      .projects-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(var(--max-width), calc(100% - 30px)); }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 15px; right: 15px; padding: 18px; border: 1px solid var(--border); border-radius: 16px; background: rgba(17,17,28,.98); flex-direction: column; align-items: stretch; gap: 14px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 5px 3px; }
+      .nav-cta { text-align: center; }
+      .hero { padding: 55px 0 25px; }
+      h1 { font-size: clamp(2.65rem, 13vw, 4rem); }
+      section { padding: 35px 0; }
+      .toolbar { align-items: stretch; }
+      .search-wrap { width: 100%; }
+      .skills-grid, .learning-grid, .projects-grid { grid-template-columns: 1fr; }
+      .skill-desc { min-height: 0; }
+      .cta { align-items: flex-start; flex-direction: column; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Chaitanya Bidkar home">CB<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#skills" aria-current="page">Skills</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-cta" href="mailto:your.email@example.com">Contact me ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Skills &amp; technologies</div>
+          <h1>My toolkit for<br><span class="gradient">building ideas.</span></h1>
+          <p>
+            I'm Chaitanya Bidkar, a Java Developer and MCA Data Science student. This page highlights the technologies
+            I'm learning and practising as I work toward becoming a professional software developer.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#skills">Explore skills ↓</a>
+            <a class="btn btn-secondary" href="#projects">View project ideas ↗</a>
+          </div>
+        </div>
+        <aside class="summary-card reveal" aria-label="Skills overview">
+          <h2>My learning dashboard</h2>
+          <p>A snapshot of my current technical focus.</p>
+          <div class="summary-stats">
+            <div class="stat"><strong id="skillCount">12</strong><span>Skills listed</span></div>
+            <div class="stat"><strong>06</strong><span>Core focus areas</span></div>
+            <div class="stat"><strong>01</strong><span>Primary language · Java</span></div>
+            <div class="stat"><strong>∞</strong><span>Room to keep learning</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Technical overview</span>
+          <h2 class="section-title">Skills, grouped by focus</h2>
+          <p class="section-description">Filter by category or search for a technology. Skill levels and progress values are editable examples—adjust them to reflect your actual experience.</p>
+        </div>
+
+        <div class="toolbar reveal">
+          <div class="filters" role="group" aria-label="Filter skills by category">
+            <button class="filter-btn active" data-filter="all" aria-pressed="true">All skills</button>
+            <button class="filter-btn" data-filter="programming" aria-pressed="false">Programming</button>
+            <button class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
+            <button class="filter-btn" data-filter="database" aria-pressed="false">Database</button>
+            <button class="filter-btn" data-filter="tools" aria-pressed="false">Tools</button>
+          </div>
+          <label class="search-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="skillSearch" type="search" placeholder="Search skills..." aria-label="Search skills">
+          </label>
+        </div>
+
+        <div id="skillsCatalog">
+          <section class="category-section" data-category-section="programming">
+            <div class="category-heading"><div class="category-symbol" aria-hidden="true">{ }</div><div><h3>Programming</h3><p>Logic, problem-solving, and application development</p></div></div>
+            <div class="skills-grid">
+              <article class="skill-card reveal" data-category="programming" data-name="Java" data-level="Intermediate" data-progress="60">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">J</div><div class="skill-title"><h4>Java</h4><p>Primary language</p></div></div>
+                <span class="level intermediate">Intermediate</span>
+                <p class="skill-desc">Practising core syntax, object-oriented programming, and structured application logic.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">60%</span></div><div class="progress-track"><div class="progress-fill" data-width="60%"></div></div>
+              </article>
+              <article class="skill-card reveal" data-category="programming" data-name="Python" data-level="Beginner" data-progress="35">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">Py</div><div class="skill-title"><h4>Python</h4><p>General-purpose programming</p></div></div>
+                <span class="level">Beginner</span>
+                <p class="skill-desc">Building programming fundamentals and exploring scripting and data-focused tasks.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">35%</span></div><div class="progress-track"><div class="progress-fill" data-width="35%"></div></div>
+              </article>
+              <article class="skill-card reveal" data-category="programming" data-name="Object-Oriented Programming OOP" data-level="Beginner" data-progress="40">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">OOP</div><div class="skill-title"><h4>OOP concepts</h4><p>Programming principles</p></div></div>
+                <span class="level">Beginner</span>
+                <p class="skill-desc">Learning classes, objects, encapsulation, inheritance, and polymorphism.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">40%</span></div><div class="progress-track"><div class="progress-fill" data-width="40%"></div></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="category-section" data-category-section="web">
+            <div class="category-heading"><div class="category-symbol" aria-hidden="true">&lt;/&gt;</div><div><h3>Web development</h3><p>Building clean, responsive web experiences</p></div></div>
+            <div class="skills-grid">
+              <article class="skill-card reveal" data-category="web" data-name="HTML" data-level="Intermediate" data-progress="65">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">H</div><div class="skill-title"><h4>HTML</h4><p>Web structure</p></div></div>
+                <span class="level intermediate">Intermediate</span>
+                <p class="skill-desc">Creating semantic page structures and organizing content for the web.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">65%</span></div><div class="progress-track"><div class="progress-fill" data-width="65%"></div></div>
+              </article>
+              <article class="skill-card reveal" data-category="web" data-name="CSS" data-level="Intermediate" data-progress="60">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">#</div><div class="skill-title"><h4>CSS</h4><p>Layout and visual design</p></div></div>
+                <span class="level intermediate">Intermediate</span>
+                <p class="skill-desc">Styling responsive layouts, spacing, typography, and interactive states.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">60%</span></div><div class="progress-track"><div class="progress-fill" data-width="60%"></div></div>
+              </article>
+              <article class="skill-card reveal" data-category="web" data-name="JavaScript" data-level="Beginner" data-progress="30">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">JS</div><div class="skill-title"><h4>JavaScript</h4><p>Browser interactivity</p></div></div>
+                <span class="level">Beginner</span>
+                <p class="skill-desc">Learning variables, functions, events, and interactive user-interface behaviour.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">30%</span></div><div class="progress-track"><div class="progress-fill" data-width="30%"></div></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="category-section" data-category-section="database">
+            <div class="category-heading"><div class="category-symbol" aria-hidden="true">DB</div><div><h3>Databases</h3><p>Storing, querying, and organizing information</p></div></div>
+            <div class="skills-grid">
+              <article class="skill-card reveal" data-category="database" data-name="SQL" data-level="Intermediate" data-progress="55">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">SQL</div><div class="skill-title"><h4>SQL</h4><p>Query language</p></div></div>
+                <span class="level intermediate">Intermediate</span>
+                <p class="skill-desc">Practising SELECT queries, filtering, joins, aggregation, and data manipulation.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">55%</span></div><div class="progress-track"><div class="progress-fill" data-width="55%"></div></div>
+              </article>
+              <article class="skill-card reveal" data-category="database" data-name="MySQL" data-level="Beginner" data-progress="35">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">My</div><div class="skill-title"><h4>MySQL</h4><p>Relational database</p></div></div>
+                <span class="level">Beginner</span>
+                <p class="skill-desc">Learning relational database concepts, table design, and database queries.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">35%</span></div><div class="progress-track"><div class="progress-fill" data-width="35%"></div></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="category-section" data-category-section="tools">
+            <div class="category-heading"><div class="category-symbol" aria-hidden="true">⚙</div><div><h3>Developer tools</h3><p>Workflow, collaboration, and source control</p></div></div>
+            <div class="skills-grid">
+              <article class="skill-card reveal" data-category="tools" data-name="Git" data-level="Beginner" data-progress="40">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">Git</div><div class="skill-title"><h4>Git</h4><p>Version control</p></div></div>
+                <span class="level">Beginner</span>
+                <p class="skill-desc">Practising repositories, commits, branches, and tracking code changes.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">40%</span></div><div class="progress-track"><div class="progress-fill" data-width="40%"></div></div>
+              </article>
+              <article class="skill-card reveal" data-category="tools" data-name="GitHub" data-level="Beginner" data-progress="40">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">GH</div><div class="skill-title"><h4>GitHub</h4><p>Code hosting and collaboration</p></div></div>
+                <span class="level">Beginner</span>
+                <p class="skill-desc">Hosting repositories, documenting projects, and learning collaboration workflows.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">40%</span></div><div class="progress-track"><div class="progress-fill" data-width="40%"></div></div>
+              </article>
+              <article class="skill-card reveal" data-category="tools" data-name="VS Code Visual Studio Code" data-level="Beginner" data-progress="45">
+                <div class="skill-top"><div class="skill-icon" aria-hidden="true">VS</div><div class="skill-title"><h4>VS Code</h4><p>Code editor</p></div></div>
+                <span class="level">Beginner</span>
+                <p class="skill-desc">Using an editor to write, organize, and debug code across projects.</p>
+                <div class="progress-label"><span>Learning progress</span><span class="progress-value">45%</span></div><div class="progress-track"><div class="progress-fill" data-width="45%"></div></div>
+              </article>
+            </div>
+          </section>
+        </div>
+        <div class="empty-state" id="emptyState">No skills match your search. Try a different term or category.</div>
+      </div>
+    </section>
+
+    <section id="learning">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Always improving</span>
+          <h2 class="section-title">What I'm working on next</h2>
+          <p class="section-description">These learning areas help me connect programming fundamentals with practical development work.</p>
+        </div>
+        <div class="learning-grid">
+          <article class="learning-card reveal">
+            <h3>Strengthening fundamentals</h3>
+            <p>Practise Java, object-oriented programming, SQL queries, and debugging with small, consistent exercises.</p>
+            <div class="tag-list"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">SQL</span><span class="tag">Problem-solving</span></div>
+          </article>
+          <article class="learning-card reveal">
+            <h3>Building practical projects</h3>
+            <p>Use web technologies and version control to build projects, document what I learn, and improve through feedback.</p>
+            <div class="tag-list"><span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span><span class="tag">Git</span><span class="tag">GitHub</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="kicker">Put skills into practice</span>
+          <h2 class="section-title">Projects to demonstrate my skills</h2>
+          <p class="section-description">Use these as project ideas or replace them with your real projects and repository links before publishing.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <span class="project-number">PROJECT IDEA 01</span>
+            <h3>Student Management System</h3>
+            <p>A simple application to organize student details, search records, and practise CRUD operations and data validation.</p>
+            <div class="tag-list"><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Database</span></div>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-number">PROJECT IDEA 02</span>
+            <h3>Personal Portfolio</h3>
+            <p>A responsive portfolio website to introduce myself, showcase skills, and share project work professionally.</p>
+            <div class="tag-list"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-number">PROJECT IDEA 03</span>
+            <h3>SQL Practice Database</h3>
+            <p>A small relational database with sample records, useful queries, joins, grouping, and a clear README.</p>
+            <div class="tag-list"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">GitHub</span></div>
+          </article>
+        </div>
+        <p class="project-note">Note: These are starter ideas, not claims of completed projects. Replace them with completed work when available.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <span class="kicker">Let's connect</span>
+            <h2>Learning today. Building for tomorrow.</h2>
+            <p>I'm focused on growing as a developer, learning from real projects, and contributing to useful software.</p>
+          </div>
+          <a class="btn btn-primary" href="mailto:your.email@example.com">Contact me ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> <strong>Chaitanya Bidkar</strong>. Built with care.</div>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Responsive navigation menu
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.querySelector("span").textContent = open ? "✕" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.querySelector("span").textContent = "☰";
+    }));
+
+    // Animate progress bars when cards become visible.
+    const progressBars = document.querySelectorAll(".progress-fill");
+    const animateProgress = () => progressBars.forEach(bar => { bar.style.width = bar.dataset.width; });
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const progressObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bar = entry.target.querySelector(".progress-fill");
+            if (bar) bar.style.width = bar.dataset.width;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      document.querySelectorAll(".skill-card").forEach(card => progressObserver.observe(card));
+    } else {
+      animateProgress();
+    }
+
+    // Filter skill cards by category and search query.
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const searchInput = document.getElementById("skillSearch");
+    const skillCards = [...document.querySelectorAll(".skill-card")];
+    const categorySections = document.querySelectorAll("[data-category-section]");
+    const emptyState = document.getElementById("emptyState");
+    let activeFilter = "all";
+
+    function filterSkills() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      skillCards.forEach(card => {
+        const categoryMatches = activeFilter === "all" || card.dataset.category === activeFilter;
+        const searchMatches = card.dataset.name.toLowerCase().includes(query) ||
+          card.textContent.toLowerCase().includes(query);
+        const show = categoryMatches && searchMatches;
+        card.hidden = !show;
+        if (show) visibleCount++;
+      });
+
+      categorySections.forEach(section => {
+        const visibleCards = [...section.querySelectorAll(".skill-card")].some(card => !card.hidden);
+        section.hidden = !visibleCards;
+      });
+      emptyState.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    filterButtons.forEach(button => button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      filterButtons.forEach(item => {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+      filterSkills();
+    }));
+    searchInput.addEventListener("input", filterSkills);
+
+    // Reveal page content as it enters the viewport.
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealItems.forEach(item => revealObserver.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("visible"));
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
